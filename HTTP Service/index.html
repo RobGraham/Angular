@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="githubViewer">
+
   <head>
-    <script src="https://code.angularjs.org/1.3.0-beta.5/angular.js" ></script>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="js/script.js"></script>
+    <link data-require="bootstrap-css@3.2.0" data-semver="3.2.0" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <script src="https://code.angularjs.org/1.3.0-beta.5/angular.js" data-semver="1.3.0-beta.5" data-require="angular.js@1.3.0-beta.5"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
 
   <body ng-controller="MainController">
-    <div>{{error}}</div>
+      <div>{{error}}</div>
     <h2>Name: {{user.name}}</h2>
     <img ng-src="{{user.avatar_url}}" title="{{user.name}}" />
   </body>

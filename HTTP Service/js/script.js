@@ -1,17 +1,21 @@
-// Code goes here
+(function() {
+    
+    var app = angular.module("githubViewer", []);
 
-var MainController = function($scope, $http) {
+    var MainController = function($scope, $http) {
+
+        var onUserComplete = function(response) {
+            $scope.user = response.data;
+        };
+
+        var onError = function(reason) {
+            $scope.error = "Could not fetch the user";
+        };
+
+        $http.get("https://api.github.com/users/RobGraham")
+            .then(onUserComplete, onError);
+    };
     
-    var onUserComplete = function(response){
-        $scope.user = response.data;
-    }
-    
-    var onError = function(reason){
-        $scope.error = "Could not fetch the user";
-    }
-    
-    $http.get("https://api.github.com/users/RobGraham")
-        .then(onUserComplete, onError)
-    
-    $scope.message = "Hello world";
-}
+     app.controller("MainController", ["$scope", "$http", MainController]);
+     
+}());
