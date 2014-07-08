@@ -1,0 +1,13 @@
+<div>
+    <form name="searchUser" class="form-inline" ng-submit="search()">
+        <div class="row container-fluid">
+            <div class="form-group">
+                <input type="search" class="form-control col-sm-5" required="" placeholder="Username to find" ng-model="username" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </form>
+    <div>{{ error }}</div>
+</div>
